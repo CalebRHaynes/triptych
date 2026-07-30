@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triptych</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="triptych">
+  <video id="left" muted playsinline></video>
+  <video id="center" muted playsinline></video>
+  <video id="right" muted playsinline></video>
+</div>
+
+<div id="controls">
+  <button id="playPause">▶</button>
+  <input id="timeline" type="range" min="0" value="0" step="0.01">
+</div>
+
+<audio id="audio" preload="auto"></audio>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
