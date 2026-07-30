@@ -43,8 +43,7 @@ html, body {
   z-index: 10;
 }
 
-body:hover #controls,
-#controls:hover {
+#controls.visible {
   opacity: 1;
 }
 
