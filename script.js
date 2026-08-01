@@ -9,9 +9,9 @@ const button = document.getElementById("playPause");
 const timeline = document.getElementById("timeline");
 const controls = document.getElementById("controls");
 
-videos[0].src = "https://pub-1bf5454447af4507a832554561663dc4.r2.dev/EMPIRE_exp2.compressed.mp4";
-videos[1].src = "https://pub-1bf5454447af4507a832554561663dc4.r2.dev/LABOR_exp2.compressed.mp4";
-videos[2].src = "https://pub-1bf5454447af4507a832554561663dc4.r2.dev/DREAMS_exp2.compressed.mp4";
+videos[0].src = "https://pub-1bf5454447af4507a832554561663dc4.r2.dev/EMPIRE_exp2.compressed_crf28.mp4";
+videos[1].src = "https://pub-1bf5454447af4507a832554561663dc4.r2.dev/LABOR_exp2.compressed_crf28.mp4";
+videos[2].src = "https://pub-1bf5454447af4507a832554561663dc4.r2.dev/DREAMS_exp2.compressed_crf28.mp4";
 
 audio.src = "https://pub-1bf5454447af4507a832554561663dc4.r2.dev/Triptych_07.wav";
 
