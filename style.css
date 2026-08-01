@@ -1,7 +1,8 @@
 html, body {
   margin: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: #000;
   color: #fff;
@@ -12,15 +13,69 @@ html, body {
   display: flex;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   gap: 10px;
 }
 
 #triptych video {
-  width: calc((100vw - 20px) / 3);
-  height: 100%;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
   object-fit: contain;
 }
 
+#triptych video.solo-hidden {
+  display: none;
+}
+
+/* Top bar: solo controls */
+#topbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+#topbar.visible {
+  opacity: 1;
+}
+
+.soloBtn {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  padding: 8px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.soloBtn:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.soloBtn.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Bottom controls */
 #controls {
   position: fixed;
   bottom: 30px;
@@ -87,4 +142,45 @@ html, body {
   background: #fff;
   border: none;
   cursor: pointer;
+}
+
+/* Mobile: stack vertically, bigger touch targets */
+@media (max-width: 700px) {
+  #triptych {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  #playPause {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+
+  #timeline::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+  }
+
+  #timeline::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+  }
+
+  #controls {
+    bottom: max(20px, env(safe-area-inset-bottom));
+    width: min(90vw, 900px);
+    padding: 12px 16px;
+  }
+
+  #topbar {
+    top: max(16px, env(safe-area-inset-top));
+    gap: 4px;
+    padding: 8px 10px;
+  }
+
+  .soloBtn {
+    font-size: 11px;
+    padding: 6px 9px;
+  }
 }

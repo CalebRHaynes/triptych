@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <title>Triptych</title>
 
@@ -15,6 +15,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div id="topbar">
+  <button class="soloBtn active" data-solo="all">≡</button>
+  <button class="soloBtn" data-solo="left">I</button>
+  <button class="soloBtn" data-solo="center">II</button>
+  <button class="soloBtn" data-solo="right">III</button>
+</div>
 
 <div id="triptych">
   <video id="left" muted playsinline></video>
